@@ -1,0 +1,329 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSIM - Jardinagem e Limpeza Pesada</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .brand-gradient {
+            background: linear-gradient(135deg, #065f46 0%, #059669 100%);
+        }
+
+        .text-brand {
+            color: #059669;
+        }
+
+        .bg-brand {
+            background-color: #059669;
+        }
+
+        .border-brand {
+            border-color: #059669;
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-pattern {
+            background-color: #f0fdf4;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23059669' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        #notification {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <!-- Navegação -->
+    <nav class="fixed w-full z-50 glass-nav border-b border-emerald-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <div class="flex items-center gap-2">
+                    <!-- Placeholder para o Logo ASSIM -->
+                    <div class="flex items-center justify-center bg-brand text-white w-10 h-10 rounded-lg font-bold text-xl">A</div>
+                    <span class="text-2xl font-extrabold text-emerald-900 tracking-tighter">ASSIM</span>
+                </div>
+
+                <div class="hidden md:flex space-x-8 items-center font-semibold text-slate-600">
+                    <a href="#inicio" class="hover:text-brand transition">Início</a>
+                    <a href="#historia" class="hover:text-brand transition">Nossa História</a>
+                    <a href="#servicos" class="hover:text-brand transition">Serviços</a>
+                    <a href="#clientes" class="hover:text-brand transition">Clientes</a>
+                    <a href="https://wa.me/5554991855262" target="_blank" class="bg-brand text-white px-6 py-2.5 rounded-full hover:bg-emerald-700 transition flex items-center gap-2">
+                        <i class="fab fa-whatsapp"></i> Orçamento
+                    </a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-emerald-900">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-emerald-100 px-4 py-6 space-y-4 shadow-xl">
+            <a href="#inicio" class="block font-bold text-slate-700">Início</a>
+            <a href="#historia" class="block font-bold text-slate-700">Nossa História</a>
+            <a href="#servicos" class="block font-bold text-slate-700">Serviços</a>
+            <a href="#clientes" class="block font-bold text-slate-700">Clientes</a>
+            <a href="https://wa.me/5554991855262" class="block text-brand font-bold">Falar no WhatsApp</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="inicio" class="pt-32 pb-20 lg:pt-48 lg:pb-40 hero-pattern relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="text-center lg:text-left">
+                    <span class="inline-block px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 font-bold text-sm uppercase tracking-wider mb-6">
+                        Excelência em Cada Detalhe
+                    </span>
+                    <h1 class="text-4xl lg:text-6xl font-extrabold text-emerald-900 leading-tight mb-6">
+                        Nós vamos transformar seu <span class="text-brand">ambiente</span> em 3 passos.
+                    </h1>
+                    <p class="text-lg text-slate-600 mb-10 max-w-xl mx-auto lg:mx-0">
+                        Especialistas em jardinagem, limpeza pesada e manutenção profissional para residências, empresas e indústrias.
+                    </p>
+                    <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                        <a href="https://wa.me/5554991855262" class="bg-brand text-white px-8 py-4 rounded-2xl font-bold text-lg hover:bg-emerald-700 transition shadow-xl shadow-emerald-200 flex items-center justify-center gap-3">
+                            <i class="fab fa-whatsapp text-xl"></i> Chamar no WhatsApp
+                        </a>
+                        <a href="#servicos" class="bg-white text-emerald-800 border-2 border-emerald-100 px-8 py-4 rounded-2xl font-bold text-lg hover:bg-emerald-50 transition text-center">Ver Serviços</a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center">
+                    <div class="absolute -inset-4 bg-emerald-200/30 rounded-full blur-3xl"></div>
+                    <img src="https://images.unsplash.com/photo-1558905619-17254261bc65?auto=format&fit=crop&q=80&w=600" alt="Jardim Bem Cuidado" class="relative rounded-3xl shadow-2xl border-8 border-white w-full max-w-md object-cover aspect-square">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossa História -->
+    <section id="historia" class="py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=400" alt="Limpeza Pesada" class="rounded-2xl shadow-lg mt-8">
+                        <img src="https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?auto=format&fit=crop&q=80&w=400" alt="Equipe Trabalhando" class="rounded-2xl shadow-lg">
+                    </div>
+                </div>
+                <div class="order-1 lg:order-2">
+                    <span class="text-brand font-bold uppercase tracking-widest text-sm">A ASSIM Serviços</span>
+                    <h2 class="text-3xl lg:text-4xl font-bold text-emerald-900 mt-2 mb-6 tracking-tight">Experiência Prática transformada em Excelência</h2>
+                    <p class="text-slate-600 mb-6 leading-relaxed">
+                        A **ASSIM Serviços** nasceu de uma necessidade real vivida pelos fundadores, **Abdias Felipe Franco (Badaco)** e **Fabiane Ribeiro Soares**. Após enfrentarem transtornos com serviços não qualificados em sua própria residência, decidiram transformar essa experiência em um compromisso: oferecer limpeza técnica e jardinagem com padrão de excelência.
+                    </p>
+                    <p class="text-slate-600 mb-8 leading-relaxed">
+                        Com base em Passo Fundo e liderada por profissionais com sólida formação jurídica e estratégica, a empresa evoluiu de uma operação enxuta para uma estrutura completa, com frota própria e equipe altamente treinada.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="p-4 rounded-xl bg-emerald-50 border-l-4 border-brand">
+                            <h4 class="font-bold text-emerald-900 text-lg">Qualidade</h4>
+                            <p class="text-sm text-emerald-700">Atenção total aos detalhes em cada projeto.</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-emerald-50 border-l-4 border-brand">
+                            <h4 class="font-bold text-emerald-900 text-lg">Segurança</h4>
+                            <p class="text-sm text-emerald-700">Conformidade rigorosa com normas técnicas.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos" class="py-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-16">
+            <h2 class="text-3xl lg:text-4xl font-extrabold text-emerald-900 mb-4">Nossas Especialidades</h2>
+            <p class="text-slate-600 max-w-2xl mx-auto">Soluções integradas para manter seu espaço sempre impecável e seguro.</p>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Serviço 1 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-16 h-16 bg-emerald-50 text-brand rounded-2xl flex items-center justify-center mb-6 text-3xl">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <h3 class="text-xl font-bold text-emerald-900 mb-3">Jardinagem</h3>
+                <p class="text-slate-600 text-sm">Manutenção de canteiros, poda, plantio e cuidados manuais com zelo e dedicação nível ASSIM.</p>
+            </div>
+            <!-- Serviço 2 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-16 h-16 bg-emerald-50 text-brand rounded-2xl flex items-center justify-center mb-6 text-3xl">
+                    <i class="fas fa-broom"></i>
+                </div>
+                <h3 class="text-xl font-bold text-emerald-900 mb-3">Limpeza Pós-Obra</h3>
+                <p class="text-slate-600 text-sm">Limpeza técnica detalhada para entregar seu imóvel novo pronto para morar ou trabalhar.</p>
+            </div>
+            <!-- Serviço 3 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-16 h-16 bg-emerald-50 text-brand rounded-2xl flex items-center justify-center mb-6 text-3xl">
+                    <i class="fas fa-building"></i>
+                </div>
+                <h3 class="text-xl font-bold text-emerald-900 mb-3">Limpeza em Altura</h3>
+                <p class="text-slate-600 text-sm">Serviços de difícil acesso em ambientes industriais e prediais com total segurança.</p>
+            </div>
+            <!-- Serviço 4 -->
+            <div class="bg-white p-8 rounded-3xl shadow-sm border border-emerald-100 hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
+                <div class="w-16 h-16 bg-emerald-50 text-brand rounded-2xl flex items-center justify-center mb-6 text-3xl">
+                    <i class="fas fa-industry"></i>
+                </div>
+                <h3 class="text-xl font-bold text-emerald-900 mb-3">Manutenção Geral</h3>
+                <p class="text-slate-600 text-sm">Soluções completas de manutenção para empresas, hospitais e condomínios.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clientes -->
+    <section id="clientes" class="py-20 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h3 class="text-center text-xl font-bold text-slate-400 uppercase tracking-widest mb-12">Quem confia no nosso trabalho</h3>
+            <div class="flex flex-wrap justify-center items-center gap-10 opacity-60 grayscale hover:grayscale-0 transition-all">
+                <div class="text-2xl font-black text-slate-600">SICREDI</div>
+                <div class="text-2xl font-black text-slate-600">SÃO JOÃO</div>
+                <div class="text-2xl font-black text-slate-600">ANDRETA</div>
+                <div class="text-2xl font-black text-slate-600">FIT ACADEMIA</div>
+                <div class="text-2xl font-black text-slate-600">ÓRGÃOS PÚBLICOS</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Diferenciais -->
+    <section class="py-24 brand-gradient text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-4">Por que escolher a ASSIM?</h2>
+                <p class="text-emerald-100 max-w-2xl mx-auto">Nossa trajetória é marcada pela evolução contínua e valorização do cliente.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-12 text-center">
+                <div>
+                    <div class="text-4xl mb-4"><i class="fas fa-truck"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Estrutura Própria</h4>
+                    <p class="text-emerald-100 text-sm">Frota moderna com veículos preparados e carreta para transporte de equipamentos pesados.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4"><i class="fas fa-user-check"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Equipe Especializada</h4>
+                    <p class="text-emerald-100 text-sm">Colaboradores treinados, uniformizados e focados no cumprimento rigoroso das normas.</p>
+                </div>
+                <div>
+                    <div class="text-4xl mb-4"><i class="fas fa-handshake"></i></div>
+                    <h4 class="text-xl font-bold mb-2">Transparência</h4>
+                    <p class="text-emerald-100 text-sm">Relações sólidas baseadas na ética e na entrega real de resultados contratados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato / Footer -->
+    <footer id="contato" class="bg-slate-900 text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <div class="flex items-center gap-2 mb-6">
+                        <div class="flex items-center justify-center bg-brand text-white w-10 h-10 rounded-lg font-bold">A</div>
+                        <span class="text-2xl font-black tracking-tighter">ASSIM</span>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed mb-6">
+                        A ASSIM Serviços é referência em Passo Fundo e região para quem busca seriedade e qualidade técnica em limpeza e jardinagem.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="https://www.instagram.com/assimlimpezapesada/" target="_blank" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Contatos Rápidos</h4>
+                    <ul class="space-y-4 text-slate-400">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-brand"></i>
+                            <span>(54) 99185-5262</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand"></i>
+                            <span>contato@assimservicos.com.br</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-map-marker-alt text-brand"></i>
+                            <span>Passo Fundo, RS</span>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Solicite um Orçamento</h4>
+                    <p class="text-slate-400 text-sm mb-4">Transforme seu ambiente hoje mesmo.</p>
+                    <a href="https://wa.me/5554991855262" target="_blank" class="block w-full bg-brand py-4 rounded-xl text-center font-bold hover:bg-emerald-700 transition">
+                        Enviar mensagem via WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-10 text-center text-slate-500 text-sm">
+                <p>&copy; 2024 ASSIM Serviços de Jardinagem e Limpeza Pesada. Desenvolvido com foco em excelência.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Flutuante WhatsApp -->
+    <a href="https://wa.me/5554991855262" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full shadow-2xl flex items-center justify-center text-3xl hover:scale-110 transition-transform z-50">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        // Menu Mobile
+        const btn = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Fechar menu ao clicar
+        const links = document.querySelectorAll('#mobile-menu a');
+        links.forEach(l => l.addEventListener('click', () => menu.classList.add('hidden')));
+
+        // Smooth Scroll para links internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
