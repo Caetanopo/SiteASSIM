@@ -86,6 +86,31 @@
             height: 500px;
             object-fit: cover;
         }
+
+        /* Cookie Banner & Modal Styles */
+        #cookie-banner {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            z-index: 9999;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        #privacy-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            z-index: 10000;
+            backdrop-filter: blur(4px);
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
     </style>
 </head>
 <body class="bg-white text-slate-900">
@@ -114,7 +139,7 @@
                     <a href="#manutencao" class="nav-link hover:text-green-700">MANUTENÇÃO</a>
                     <div class="h-4 w-px bg-slate-200"></div>
                     <a href="#contato" class="nav-link hover:text-green-700">CONTATO</a>
-                    <a href="https://wa.me/5554991855262" target="_blank" class="bg-brand-green text-white px-5 py-2.5 rounded-xl hover:bg-emerald-950 transition flex items-center gap-2 shadow-md">
+                    <a href="https://wa.me/5554991855262" target="_blank" class="bg-brand-green text-white px-5 py-2.5 rounded-xl hover:bg-emerald-950 transition flex items-center gap-2 shadow-md text-nowrap">
                         <i class="fab fa-whatsapp"></i> ORÇAMENTO
                     </a>
                 </div>
@@ -149,7 +174,7 @@
                         Vamos Transformar<br><span class="italic text-nowrap text-emerald-900">Seu ambiente <br />De um jeito <br />ASSIM</span>.
                     </h1>
                     <p class="text-lg text-emerald-900/70 mb-10 max-w-xl leading-relaxed font-medium">
-                        Cuidamos de grandes canteiros, gramados industriais e limpeza técnica pós-obra com maquinário pesado e equipa altamente qualificada.
+                        Cuidamos de grandes canteiros, gramados industriais e limpeza técnica pós-obra com maquinário pesado e equipe altamente qualificada.
                     </p>
                     <div class="flex flex-wrap items-center gap-6">
                         <a href="https://wa.me/5554991855262" target="_blank" class="bg-brand-green text-white px-10 py-5 rounded-2xl font-bold text-lg hover:bg-emerald-950 transition shadow-xl shadow-green-200 flex items-center justify-center gap-3">
@@ -192,20 +217,20 @@
                 <div class="lg:w-1/2">
                     <span class="text-grass font-black uppercase tracking-widest text-xs mb-4 block">Fundada no Rigor e na Ética</span>
                     <h2 class="text-3xl lg:text-5xl font-extrabold text-emerald-950 mb-8 leading-tight"><span class="text-grass">Gestão de Serviços</span></h2>
-                    <p class="text-slate-600 mb-6 leading-relaxed text-lg text-justify">
+                    <p class="text-slate-600 mb-6 leading-relaxed text-lg text-justify font-medium">
                         Fundada por <strong>Abdias Felipe Franco</strong> e <strong>Fabiane Ribeiro Soares</strong>, ambos bacharéis em Direito, a ASSIM nasceu de uma visão estratégica: profissionalizar o mercado de manutenção com transparência absoluta.
                     </p>
-                    <p class="text-slate-600 mb-8 leading-relaxed text-justify">
+                    <p class="text-slate-600 mb-8 leading-relaxed text-justify font-medium">
                         Os fundadores aplicam hoje na ASSIM o mesmo rigor técnico e atenção aos detalhes exigidos no mundo jurídico e bancário, garantindo segurança total para empresas e construtoras.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
                             <p class="text-4xl font-black text-grass mb-1">3</p>
-                            <p class="text-[10px] font-black text-emerald-900 uppercase">Veículos Próprios</p>
+                            <p class="text-[10px] font-black text-emerald-900 uppercase tracking-widest font-bold">Veículos Próprios</p>
                         </div>
                         <div class="p-6 bg-slate-50 rounded-3xl border border-slate-100">
                             <p class="text-4xl font-black text-grass mb-1">100%</p>
-                            <p class="text-[10px] font-black text-emerald-900 uppercase">Equipa Treinada</p>
+                            <p class="text-[10px] font-black text-emerald-900 uppercase tracking-widest font-bold">Equipa Treinada</p>
                         </div>
                     </div>
                 </div>
@@ -256,7 +281,7 @@
                     <i class="fas fa-broom"></i>
                 </div>
                 <h2 class="text-3xl lg:text-5xl font-extrabold mb-6 uppercase tracking-tighter">Limpeza Técnica <br><span class="text-grass">Pós-Obra</span></h2>
-                <p class="text-emerald-100/70 mb-8 leading-relaxed text-lg font-medium">A fase final da sua obra exige precisão. Removemos resíduos pesados e sujeira técnica com equipamentos de alta pressão, garantindo uma entrega impecável.</p>
+                <p class="text-emerald-100/70 mb-8 leading-relaxed text-lg font-medium text-justify">A fase final da sua obra exige precisão. Removemos resíduos pesados e sujeira técnica com equipamentos de alta pressão, garantindo uma entrega impecável.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div class="flex items-center gap-2 text-sm font-bold text-emerald-100"><i class="fas fa-check text-grass"></i> Lavagem de Alta Pressão</div>
                     <div class="flex items-center gap-2 text-sm font-bold text-emerald-100"><i class="fas fa-check text-grass"></i> Remoção de Cimento e Tintas</div>
@@ -293,7 +318,7 @@
                     <i class="fas fa-mountain"></i>
                 </div>
                 <h2 class="text-3xl lg:text-5xl font-extrabold text-emerald-950 mb-6 uppercase tracking-tighter">Limpeza em <br><span class="text-grass">Altura (Fachadas)</span></h2>
-                <p class="text-slate-600 mb-8 leading-relaxed text-lg font-medium">Especialistas em serviços de difícil acesso. Atendemos indústrias, condomínios e prédios comerciais seguindo rigorosamente a norma <strong>NR-35</strong>, com segurança total e equipe certificada.</p>
+                <p class="text-slate-600 mb-8 leading-relaxed text-lg font-medium text-justify">Especialistas em serviços de difícil acesso. Atendemos indústrias, condomínios e prédios comerciais seguindo rigorosamente a norma <strong>NR-35</strong>, com segurança total e equipe certificada.</p>
                 <ul class="space-y-3 font-bold text-emerald-900 text-sm mb-8">
                     <li><i class="fas fa-check text-grass mr-2"></i> Treinamento NR-35 Completo</li>
                     <li><i class="fas fa-check text-grass mr-2"></i> Lavagem Técnica de Vidros e Pastilhas</li>
@@ -324,7 +349,7 @@
                     <i class="fas fa-tools"></i>
                 </div>
                 <h2 class="text-3xl lg:text-5xl font-extrabold text-emerald-950 mb-6 uppercase tracking-tighter">Zeladoria e <br><span class="text-grass">Manutenção Especializada</span></h2>
-                <p class="text-slate-600 mb-8 leading-relaxed text-lg font-medium">Soluções completas para condomínios, empresas e áreas públicas. Atuamos na manutenção preventiva e corretiva com agilidade, equipamentos próprios e o rigor que sua infraestrutura exige.</p>
+                <p class="text-slate-600 mb-8 leading-relaxed text-lg font-medium text-justify">Soluções completas para condomínios, empresas e áreas públicas. Atuamos na manutenção preventiva e corretiva com agilidade, equipamentos próprios e o rigor que sua infraestrutura exige.</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
                     <div class="flex items-center gap-2 text-sm font-bold text-emerald-900"><i class="fas fa-check text-grass"></i> Limpeza de Lagos e Fontes</div>
                     <div class="flex items-center gap-2 text-sm font-bold text-emerald-900"><i class="fas fa-check text-grass"></i> Sopragem e Limpeza Urbana</div>
@@ -359,18 +384,18 @@
         </div>
     </section>
 
-    <!-- Contato -->
+    <!-- Contato (MELHORADO COM LOGO E LINKS SOCIAIS) -->
     <section id="contato" class="py-24 bg-brand-green text-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 class="text-3xl lg:text-5xl font-extrabold mb-8">Vamos transformar o seu <span class="italic text-emerald-200">ambiente</span>?</h2>
-            <p class="text-emerald-100 text-lg mb-12 max-w-2xl mx-auto font-medium">Fale conosco agora mesmo para solicitar um orçamento personalizado ou agendar uma visita técnica.</p>
+            <h2 class="text-3xl lg:text-5xl font-extrabold mb-8 uppercase tracking-tight">Vamos transformar o seu <span class="italic text-emerald-200">ambiente</span>?</h2>
+            <p class="text-emerald-100 text-lg mb-12 max-w-2xl mx-auto font-medium">Solicite agora um diagnóstico gratuito para sua empresa ou condomínio. Nossa equipe está pronta para atender você!</p>
 
             <div class="flex flex-col sm:flex-row justify-center items-center gap-6">
-                <!-- Botão WhatsApp -->
+                <!-- Botão WhatsApp Real -->
                 <a href="https://wa.me/5554991855262" target="_blank" class="bg-grass text-white px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition shadow-2xl inline-flex items-center gap-4 w-full sm:w-auto justify-center">
                     <i class="fab fa-whatsapp"></i> WhatsApp Comercial
                 </a>
-                <!-- Botão Instagram -->
+                <!-- Botão Instagram Real -->
                 <a href="https://www.instagram.com/assimlimpezapesada/" target="_blank" class="bg-white text-emerald-900 px-10 py-5 rounded-2xl font-black text-xl hover:scale-105 transition shadow-2xl inline-flex items-center gap-4 w-full sm:w-auto justify-center">
                     <i class="fab fa-instagram"></i> @assimlimpezapesada
                 </a>
@@ -383,19 +408,20 @@
         <div class="max-w-7xl mx-auto px-4 text-center">
             <!-- Logo no Rodapé -->
             <div class="flex flex-col items-center justify-center gap-4 mb-8">
-                <div class="w-20 h-20 overflow-hidden rounded-xl">
+                <div class="w-24 h-24 overflow-hidden rounded-xl bg-white/10 p-2">
                     <img src="Images/Logo A transparente menor.png" alt="Logo ASSIM" class="w-full h-full object-contain">
                 </div>
                 <span class="text-2xl font-black tracking-tighter uppercase">ASSIM SERVIÇOS</span>
             </div>
 
-            <nav class="flex flex-wrap justify-center gap-8 mb-10 text-xs font-bold uppercase tracking-widest text-emerald-100/50">
+            <nav class="flex flex-wrap justify-center gap-x-8 gap-y-4 mb-10 text-xs font-bold uppercase tracking-widest text-emerald-100/50">
                 <a href="#inicio" class="hover:text-grass transition">Home</a>
                 <a href="#empresa" class="hover:text-grass transition">A Empresa</a>
                 <a href="#jardinagem" class="hover:text-grass transition">Jardinagem</a>
                 <a href="#pos-obra" class="hover:text-grass transition">Pós-Obra</a>
                 <a href="#limpeza" class="hover:text-grass transition">Limpeza</a>
                 <a href="#contato" class="hover:text-grass transition">Contato</a>
+                <button onclick="showCookieSettings()" class="hover:text-grass transition">Configurações de Privacidade</button>
             </nav>
 
             <div class="text-[10px] text-emerald-100/20 font-bold uppercase tracking-[0.2em] leading-relaxed">
@@ -411,13 +437,79 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
+    <!-- Banner de Cookies conforme anexo -->
+    <div id="cookie-banner" class="p-6 md:p-8">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex-1">
+                <h4 class="text-lg font-bold text-emerald-950 mb-1">Valorizamos sua privacidade</h4>
+                <p class="text-sm text-slate-600 font-medium leading-relaxed">
+                    Utilizamos cookies para melhorar sua experiência e analisar nosso tráfego. Ao clicar em "Aceitar", você concorda com o uso de cookies conforme nossa
+                    <button onclick="openPrivacyModal()" class="text-green-600 underline font-bold">Política de Privacidade</button>.
+                </p>
+            </div>
+            <div class="flex items-center gap-4 w-full md:w-auto">
+                <button onclick="acceptCookies()" class="flex-1 md:flex-none px-8 py-3 bg-green-600 text-white font-bold rounded-lg hover:bg-green-700 transition">Aceitar</button>
+                <button onclick="rejectCookies()" class="flex-1 md:flex-none px-8 py-3 bg-slate-100 text-slate-700 font-bold rounded-lg hover:bg-slate-200 transition">Recusar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Política de Privacidade (Estilo verde ASSIM) -->
+    <div id="privacy-modal" onclick="closePrivacyModalOnOutsideClick(event)">
+        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col overflow-hidden">
+            <!-- Header do Modal -->
+            <div class="p-6 border-b border-slate-100 flex justify-between items-center bg-slate-50">
+                <h3 class="text-2xl font-extrabold text-emerald-950 tracking-tight">Política de Privacidade</h3>
+                <button onclick="closePrivacyModal()" class="text-slate-400 hover:text-red-500 transition text-2xl">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <!-- Conteúdo do Modal (Scrollable) -->
+            <div class="p-8 overflow-y-auto text-slate-600 leading-relaxed space-y-6 text-sm md:text-base">
+                <p class="font-bold text-slate-400 italic">Última atualização: Fevereiro de 2026</p>
+
+                <p>A <strong>ASSIM Serviços</strong> valoriza a privacidade de seus usuários. Esta Política de Privacidade descreve como coletamos, usamos e protegemos suas informações pessoais.</p>
+
+                <div class="space-y-4">
+                    <h4 class="font-black text-emerald-900 uppercase tracking-widest text-sm">1. Coleta de Dados</h4>
+                    <p>Coletamos apenas as informações necessárias para o funcionamento do site e para entrar em contato com você, como nome, e-mail e telefone, quando fornecidos voluntariamente através de nossos botões de orçamento ou contato.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-black text-emerald-900 uppercase tracking-widest text-sm">2. Uso das Informações</h4>
+                    <p>As informações coletadas são utilizadas exclusivamente para:</p>
+                    <ul class="list-disc pl-5 space-y-2">
+                        <li>Responder a solicitações de orçamento e contato;</li>
+                        <li>Melhorar a experiência do usuário em nosso site;</li>
+                        <li>Fins estatísticos anônimos de navegação.</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-black text-emerald-900 uppercase tracking-widest text-sm">3. Cookies</h4>
+                    <p>Utilizamos cookies para armazenar preferências básicas, como a aceitação desta política. Você pode desativar os cookies nas configurações do seu navegador a qualquer momento.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <h4 class="font-black text-emerald-900 uppercase tracking-widest text-sm">4. Contato</h4>
+                    <p>Para questões relacionadas à privacidade, entre em contato conosco através do nosso atendimento comercial via WhatsApp ou e-mail.</p>
+                </div>
+            </div>
+            <!-- Footer do Modal -->
+            <div class="p-6 border-t border-slate-100 flex justify-end bg-slate-50">
+                <button onclick="closePrivacyModal()" class="px-8 py-3 bg-emerald-950 text-white font-black rounded-xl hover:bg-emerald-900 transition shadow-lg uppercase tracking-widest text-xs">Entendi</button>
+            </div>
+        </div>
+    </div>
+
     <script>
+        // Navegação Mobile
         const btn = document.getElementById('mobile-menu-button');
         const menu = document.getElementById('mobile-menu');
         btn.addEventListener('click', () => menu.classList.toggle('hidden'));
         document.querySelectorAll('#mobile-menu a').forEach(l => l.addEventListener('click', () => menu.classList.add('hidden')));
 
-        // Carousel State
+        // Configuração de Carrosséis
         const carousels = {
             'carouselTrackJardim': { current: 0, total: 4, dotsId: 'dotsJardim' },
             'carouselTrackObra': { current: 0, total: 4, dotsId: 'dotsObra' },
@@ -425,7 +517,6 @@
             'carouselTrackManutencao': { current: 0, total: 3, dotsId: 'dotsManutencao' }
         };
 
-        // Initialize Dots
         function initDots() {
             for (const [trackId, data] of Object.entries(carousels)) {
                 const dotsContainer = document.getElementById(data.dotsId);
@@ -453,15 +544,12 @@
                 dot.style.width = index === data.current ? '24px' : '8px';
             });
 
-            // Video Playback Logic for all video slides
             const allVideos = track.querySelectorAll('video');
             allVideos.forEach(v => { v.pause(); v.currentTime = 0; });
 
             const currentItem = track.children[data.current];
             const activeVideo = currentItem.querySelector('video');
-            if (activeVideo) {
-                activeVideo.play();
-            }
+            if (activeVideo) { activeVideo.play(); }
         }
 
         function moveSlide(trackId, direction) {
@@ -475,20 +563,15 @@
             updateUI(trackId);
         }
 
-        // Auto-play interval
         setInterval(() => {
             for (const trackId in carousels) {
                 const track = document.getElementById(trackId);
                 const currentItem = track.children[carousels[trackId].current];
-                // Se o item atual tiver um vídeo, não avança sozinho (espera o vídeo acabar)
-                if (currentItem.querySelector('video')) {
-                    continue;
-                }
+                if (currentItem.querySelector('video')) continue;
                 moveSlide(trackId, 1);
             }
         }, 6000);
 
-        // Listeners para vídeos avançarem o carrossel ao acabar
         document.querySelectorAll('video').forEach(video => {
             video.onended = () => {
                 const trackId = video.closest('.carousel-track').id;
@@ -497,6 +580,47 @@
         });
 
         initDots();
+
+        // Lógica de Cookies
+        function checkCookieConsent() {
+            if (!localStorage.getItem('cookieConsent')) {
+                document.getElementById('cookie-banner').style.display = 'block';
+            }
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookieConsent', 'accepted');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookieConsent', 'rejected');
+            document.getElementById('cookie-banner').style.display = 'none';
+        }
+
+        function showCookieSettings() {
+            document.getElementById('cookie-banner').style.display = 'block';
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        // Lógica do Modal de Privacidade
+        function openPrivacyModal() {
+            document.getElementById('privacy-modal').style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Impede scroll no fundo
+        }
+
+        function closePrivacyModal() {
+            document.getElementById('privacy-modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function closePrivacyModalOnOutsideClick(event) {
+            if (event.target.id === 'privacy-modal') {
+                closePrivacyModal();
+            }
+        }
+
+        window.onload = checkCookieConsent;
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
